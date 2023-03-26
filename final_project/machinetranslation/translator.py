@@ -29,7 +29,7 @@ def english_to_french(english_text):
     """
     try:
         french_text = language_translator.translate(
-            text=english_text.lower(),
+            text=english_text,
             model_id='en-fr').get_result()['translations'][0]['translation']
         return french_text
     except ApiException as ex:
@@ -44,7 +44,7 @@ def french_to_english(french_text):
     """
     try:
         english_text = language_translator.translate(
-            text=french_text.lower(),
+            text=french_text,
             model_id='fr-en').get_result()['translations'][0]['translation']
         return english_text
     except ApiException as ex:
